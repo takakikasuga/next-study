@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { SearchBar } from './SearchBar';
+import React, { FC } from "react";
+import { SearchBar } from "./SearchBar";
 
 export const Header: FC = () => {
   return (

@@ -1,5 +1,5 @@
-import { ResolvingMetadata, Metadata } from 'next';
-import { Header } from './components';
+import { ResolvingMetadata, Metadata } from "next";
+import { Header } from "./components";
 
 type MetaPropsType = {
   params: { slug: string };
@@ -12,21 +12,23 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const slug = params.slug;
   const parent = await _parent;
-  console.log('parent === ', parent);
+  console.log("parent === ", parent);
 
   return {
-    title: slug
+    title: slug,
   };
 }
 
 export default function RestaurantLayout({
-  children
+  children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { slug: string };
 }) {
   return (
     <main>
-      <Header />
+      <Header name={params.slug} />
       <div className="flex m-auto w-2/3 justify-between items-start 0 -mt-11">
         {children}
       </div>

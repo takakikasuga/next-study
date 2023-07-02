@@ -9,7 +9,9 @@
     "lint": "next lint",
     "prisma:format": "prisma format",
     "prisma:push": "prisma db push",
-    "prisma:generate": "prisma generate"
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio",
+    "format": "prettier --write --cache . --ignore-path .gitignore"
   },
   "dependencies": {
     "@prisma/client": "^4.15.0",
@@ -30,6 +32,7 @@
     "node": "18.16.0"
   },
   "devDependencies": {
+    "prettier": "^2.8.8",
     "prisma": "^4.15.0"
   }
 }

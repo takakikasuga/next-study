@@ -1,5 +1,5 @@
-import { Header, SearchSideBar, RestaurantCard } from './components';
-import { Metadata } from "next"
+import { Header, SearchSideBar, RestaurantCard } from "./components";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Search",

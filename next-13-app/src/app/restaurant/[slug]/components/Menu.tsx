@@ -1,7 +1,12 @@
-import React, { FC } from 'react';
-import { MenuCard } from './MenuCard';
+import React, { FC } from "react";
+import { MenuCard } from "./MenuCard";
+import { Item } from "@prisma/client";
 
-export const Menu: FC = () => {
+type PropsType = {
+  menu: Item[];
+};
+
+export const Menu: FC<PropsType> = ({ menu }) => {
   return (
     <main className="bg-white mt-5">
       <div>
@@ -9,7 +14,11 @@ export const Menu: FC = () => {
           <h1 className="font-bold text-4xl">Menu</h1>
         </div>
         <div className="flex flex-wrap justify-between">
-          <MenuCard />
+          {menu.length ? (
+            menu.map((item) => <MenuCard key={item.id} item={item} />)
+          ) : (
+            <p>This restaurant does not have a menu.</p>
+          )}
         </div>
       </div>
     </main>

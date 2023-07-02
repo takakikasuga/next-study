@@ -1,0 +1,21 @@
+# docker-composeで使用するバージョンを定義しています。2022年5月時点では、3.9が最新です。
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14
+    # コンテナの名前を指定します。
+    container_name: postgres
+    # 環境変数を設定します。
+    environment:
+      - POSTGRES_PASSWORD=password
+    # データの永続化
+    volumes:
+      # postgresディレクトリを/var/lib/postgresql/dataにマウントする
+      - db-store:/var/lib/postgresql/data
+    # ポートの指定（HOST:CONTAINER）
+    ports:
+      - 5432:5432
+# データの永続化
+volumes:
+  db-store:

@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { ReviewCard } from './ReviewCard';
+import React, { FC } from "react";
+import { ReviewCard } from "./ReviewCard";
 
 export const Reviews: FC = () => {
   return (

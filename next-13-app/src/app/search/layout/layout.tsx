@@ -1,5 +1,5 @@
 export default function SearchDeepNestedLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -7,7 +7,8 @@ export default function SearchDeepNestedLayout({
     <section>
       <a
         href="https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#nesting-layouts"
-        target="_blank">
+        target="_blank"
+      >
         Deep Nest: Layout
       </a>
       {children}
