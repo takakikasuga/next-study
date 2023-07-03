@@ -1,14 +1,22 @@
 import React, { FC } from "react";
 import { ReviewCard } from "./ReviewCard";
+import { Review } from "@prisma/client";
 
-export const Reviews: FC = () => {
+type PropsType = {
+  reviews: Review[];
+};
+
+export const Reviews: FC<PropsType> = ({ reviews }) => {
   return (
     <div>
       <h1 className="font-bold text-3xl mt-10 mb-7 borber-b pb-5">
-        What 100 people are saying
+        What {reviews.length} {reviews.length === 1 ? "person" : "people"} are
+        saying
       </h1>
       <div>
-        <ReviewCard />
+        {reviews.map((review) => (
+          <ReviewCard review={review} />
+        ))}
       </div>
     </div>
   );

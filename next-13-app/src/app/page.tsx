@@ -12,8 +12,10 @@ const fetchRestaurants = async (): Promise<RestaurantCardType[]> => {
       location: true,
       slug: true,
       price: true,
+      reviews: true,
     },
   });
+
   return restaurants;
 };
 
