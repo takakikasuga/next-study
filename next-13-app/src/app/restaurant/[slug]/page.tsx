@@ -9,10 +9,11 @@ import {
   ReservationCard,
 } from "./components";
 import { RestaurantType } from "@/types";
+import { notFound } from "next/navigation";
 
 const fetchRestaurantBySlug = async (slug: string): Promise<RestaurantType> => {
   try {
-    const restaurant = await prisma.restaurant.findUniqueOrThrow({
+    const restaurant = await prisma.restaurant.findUnique({
       where: {
         slug,
       },
@@ -25,6 +26,11 @@ const fetchRestaurantBySlug = async (slug: string): Promise<RestaurantType> => {
         reviews: true,
       },
     });
+
+    if (!restaurant) {
+      notFound();
+    }
+
     return restaurant;
   } catch (error) {
     console.error(error);
