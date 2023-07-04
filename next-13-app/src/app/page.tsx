@@ -1,4 +1,4 @@
-import { Header, RestaurantCard } from "@/components";
+import { Header, RestaurantCard } from "@/app/components";
 import { prisma } from "@/db";
 import { RestaurantCardType } from "@/types";
 

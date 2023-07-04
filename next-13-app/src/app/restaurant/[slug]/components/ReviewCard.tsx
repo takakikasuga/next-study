@@ -1,4 +1,4 @@
-import { Stars } from "@/components/Stars";
+import { Stars } from "@/app/components/Stars";
 import { Review } from "@prisma/client";
 import React, { FC } from "react";
 

@@ -1,4 +1,4 @@
-import { SearchBar } from "@/components/SearchBar";
+import { SearchBar } from "@/app/components/SearchBar";
 import React, { FC } from "react";
 
 export const Header: FC = () => {

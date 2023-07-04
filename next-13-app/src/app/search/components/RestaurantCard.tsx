@@ -1,5 +1,5 @@
-import { Price } from "@/components/Price";
-import { Stars } from "@/components/Stars";
+import { Price } from "@/app/components/Price";
+import { Stars } from "@/app/components/Stars";
 import { RestaurantCardType } from "@/types";
 import { calcReviewRatingAverages } from "@/utils/calcReviewRatingAverages";
 import Link from "next/link";

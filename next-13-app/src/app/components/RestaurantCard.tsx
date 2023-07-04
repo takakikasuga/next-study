@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import { RestaurantCardType } from "@/types";
-import { Price } from "@/components/Price";
+import { Price } from "@/app/components/Price";
 import { calcReviewRatingAverages } from "@/utils/calcReviewRatingAverages";
 import { Stars } from "./Stars";
 

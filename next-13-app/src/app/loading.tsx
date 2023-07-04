@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Header } from "@/app/components";
 import React from "react";
 
 export default function Loading() {
