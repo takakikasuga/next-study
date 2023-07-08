@@ -2,10 +2,9 @@
 
 import { FC, useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import clsx from "clsx";
+import { AuthModalInputs } from "./AuthModalInputs";
 
 const style = {
   position: "absolute" as "absolute",
@@ -22,10 +21,26 @@ type PropsType = {
   isSignIn: boolean;
 };
 
-export const LoginModal: FC<PropsType> = ({ isSignIn }) => {
+export const AuthModal: FC<PropsType> = ({ isSignIn }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputs({
+      ...inputs,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const [inputs, setInputs] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    city: "",
+    password: "",
+  });
 
   return (
     <div>
@@ -36,7 +51,7 @@ export const LoginModal: FC<PropsType> = ({ isSignIn }) => {
           isSignIn && "bg-blue-400 text-white border p-1 px-4 rounded mr-3"
         )}
       >
-        {isSignIn ? "Sign in" : "Sign out"}
+        {isSignIn ? "Sign in" : "Sign up"}
       </button>
       <Modal
         open={open}
@@ -57,6 +72,11 @@ export const LoginModal: FC<PropsType> = ({ isSignIn }) => {
                   ? "Log Into Your Account"
                   : "Create Your OpenTable Account"}
               </h2>
+              <AuthModalInputs
+                inputs={inputs}
+                handleChangeInput={handleChangeInput}
+                isSignIn={isSignIn}
+              />
               <button className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400">
                 {isSignIn ? "Sign In" : "Create Account"}
               </button>
